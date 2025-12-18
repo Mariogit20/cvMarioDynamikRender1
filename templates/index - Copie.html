@@ -1,0 +1,343 @@
+{% extends "layouts/main.html" %}
+       <!-- Site Web de Locations de Voitures de Transports de Marchandises -->
+ {% block "title" %}
+
+
+      PORTFOLIO DYNAMIQUE de Halley Mario
+ {% endblock "title" %}
+  {% block 'desc' %}
+      description du Portfolio c'est-à-dire du Site Web CV en ligne dynamique de ANDRIANTSIMBAHARILANTO Halley Mario, ici !
+ {% endblock 'desc' %}
+
+
+{% load static %}
+{% block "contenu" %}
+
+
+{% comment %} filtre DECLARE DANS TEMPLATE index.html PUIS DANS L'Application nommée app_acceuil < templatetags < mon_filtre.py < def est_pair(value) / load mon_filtre {% endcomment %}
+
+
+
+
+
+
+{% comment %} 
+
+3 est impair
+
+filtre DECLARE DANS TEMPLATE index.html PUIS DANS L'Application nommée app_acceuil < templatetags < mon_filtre.py < def est_pair(value) / load mon_filtre  
+
+{% endcomment %}
+
+
+
+
+
+
+
+{% comment %} REDEMARREZ le SERVEUR DE DEVELOPPEMENT de DJANGO ( Par Exemple ici :      REDEMARREZ      Visual Studio Code      avec :      
+
+# Stoppez puis relancez le serveur        VISUAL STUDIO CODE      :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+CTRL+C
+python manage.py runserver
+
+) {% endcomment %}
+
+
+
+{% comment %} {{ 4|est_pair }} {% endcomment %}
+
+{% if utilisateur.nom and utilisateur.email %}
+        {% comment %} <p class="text-center text-danger">{{ utilisateur.nom }} - {{ utilisateur.email }}</p> {% endcomment %}
+        <!-- <span style="text-decoration:underline; ">{{ utilisateur.nom }} - {{ utilisateur.email }}</span>      -->
+        <!-- <input type="text" id="utilisateur_nom_A_TRONQUER_EN_22_CARACTERES"  value="{{ utilisateur.nom }}&nbsp;{{ utilisateur.prenom }}" />  -->
+        <!-- <input type="hidden" id="utilisateur_nom_A_TRONQUER_EN_22_CARACTERES"  value="{{ utilisateur.nom }}&nbsp;{{ utilisateur.prenom }}" />        -->
+        
+        <input type="text" id="utilisateur_nom_A_TRONQUER_EN_22_CARACTERES"  value="{{ utilisateur.nom }}&nbsp;{{ utilisateur.prenom }}" />               
+
+        <!-- <span style="color:blue; "   id="utilisateur_nom_TRONQUER_22_CARACTERES" >{{ utilisateur.nom }}&nbsp;{{ utilisateur.prenom }}, {{ utilisateur.email }}</span>           -->
+
+        
+    {% comment %} 
+    # ROLE_CHOICES = [
+    #     ('admin', 'Administrateur'),
+    #     ('moderator', 'Modérateur'),
+    #     ('user', 'Utilisateur'),
+    # ]
+
+    # ✅ Récapitulatif des rôles des 3 TYPES D'UTILISATEURS ( ADMINISTRATEUR, MODERATEURS, SIMPLES UTILISATEUR )
+    # Fonction	Qui peut
+    # CRUD Véhicules / Commandes	Modérateur (création/édition), Administrateur (suppression)
+    # Réinitialisation de mot de passe :	Modérateur et Administrateur
+
+    # 🔁 Réinitialisation de mot de passe (modérateurs)
+
+    # 👁 Supervision des publications par les :	  Modérateurs
+
+    # Gestion complète des utilisateurs :	Administrateur
+
+
+
+    # 🔑 Rôles utilisateurs
+    # Rôle	Accès
+    # Admin	CRUD total + gestion des utilisateurs et mots de passe
+    # Modérateur	CRUD (sauf suppression) + surveillance du contenu
+    # Utilisateur	Accès lecture, publication (si activé), pas de gestion
+    # 📩 Réinitialisation du mot de passe
+
+    # Les modérateurs peuvent réinitialiser leur mot de passe via /users/password-reset/.
+
+
+
+    # admin ===> ADMINISTRATEUR du SITE WEB : 
+    # moderator ===> MODERATEUR du SITE WEB :
+    # user ===> SIMPLE UTILISATEUR :
+
+
+
+    # ROLE_CHOICES = [
+    #     ('admin', 'Administrateur'),
+    #     ('moderator', 'Modérateur'),
+    #     ('user', 'Utilisateur'),
+    # ]    
+    {% endcomment %}
+
+{% endif %} 
+
+    <!-- <h1>Bienvenue à l'Agence de Transport <sup>ESPACE R&Eacute;SERVATION</sup></h1> -->
+    {% comment %} <h1>Bienvenue à l'Agence de Transport <marquee behavior="" direction=""><sub>ESPACE R&Eacute;SERVATION du Client</sub></marquee></h1>      {% endcomment %}
+    {% comment %} <h1>Bienvenue à l'Agence de Transport de Marchandises<sub>👍</sub></h1>  {% endcomment %}
+
+    <h1 align="center">Bienvenue à l'Agence de Transport de Marchandises<sub>👍</sub></h1>     
+
+{% comment %} 
+{% if message.Connexion_Reussie %}
+    {{ message.Connexion_Reussie }} Félicitations !
+{% endif %} 
+{% endcomment %}
+
+
+
+                {% comment %} 
+                
+                3 est 
+                {% if 3|est_pair %}
+                    <strong>pair</strong>
+                {% else %}
+                    <strong>impair</strong>
+                {% endif %} 
+                
+                {% endcomment %}
+
+
+                
+
+    {% comment %} <h1>filtre DECLARE DANS TEMPLATE index.html PUIS DANS L'Application nommée app_acceuil < templatetags < mon_filtre.py < def est_pair(value) / load mon_filtre </h1>      {% endcomment %}
+
+
+
+
+<!--   """"BALISE DE DEPLACEMENT de DROITE vers la GAUCHE"""" du MOT """"IntegrÃ© le HTML pure""""
+
+ direction="up"       MONTER vers le HAUT
+ direction="right"       ALLER vers la DROITE
+
+ <marquee behavior="alternate" direction="down">
+ <marquee behavior="alternative" direction="right">    
+ <marquee behavior="alternate" direction="right"> 
+    
+ <marquee behavior="" direction="down">     -->    
+    <h2><marquee behavior="alternative" direction="right"><span style="font-family: fantasy; ">👌ESPACE R&Eacute;SERVATION du Client</span></marquee></h2>        
+            <!-- <br>      BALISE de   RETOUR A LA LIGNE -->
+
+
+
+
+
+<!--
+DEBUT =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+DEBUT =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+1) AFFICHAGE UNIQUEMENT suivant l'   """"Ordre Croissant des Villes de Destination des Marchandises transportées"""" uniquement ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+2) AFFICHAGE PREMIEREMENT suivant les DISPONIBILITES des VOITURES ( 'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT' ) ensuite suivant l'   """"ORDRE CROISSANT""""    des    """"MARQUES DES VOITURES ( Darcia, Ferarri, Landrover, Pegeot, Terracan )"""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+    DISPONIBILITE_de_la_VOITURE_DE_TRANSPORT_DE_MARCHANDISES = [
+        ('voiture_LIBRE', 'Voiture Libre'),
+        ('en_ATTENTE_DE_CONFIRMATION', 'Voiture En ATTENTE DE CONFIRMATION'),
+        ('voiture_RESERVEE_par_le_CLIENT', 'Voiture RESERVEE par le CLIENT'), 
+    ]             
+-->
+
+<!--
+FIN   =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   =========> CHOISIR entre les       """"DEUX (02) METHODES D'AFFICHAGE""""       des         """"'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT'""""          suivantes !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+1) AFFICHAGE UNIQUEMENT suivant l'   """"ORDRE CROISSANT""""    des    """"MARQUES DES VOITURES ( Darcia, Ferarri, Landrover, Pegeot, Terracan )"""" uniquement ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+2) AFFICHAGE PREMIEREMENT suivant les DISPONIBILITES des VOITURES ( 'Voiture Libre' OU BIEN 'Voiture En ATTENTE DE CONFIRMATION' OU BIEN 'Voiture RESERVEE par le CLIENT' ) ensuite suivant l'   """"ORDRE CROISSANT""""    des    """"MARQUES DES VOITURES ( Darcia, Ferarri, Landrover, Pegeot, Terracan )"""" ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+    DISPONIBILITE_de_la_VOITURE_DE_TRANSPORT_DE_MARCHANDISES = [
+        ('voiture_LIBRE', 'Voiture Libre'),
+        ('en_ATTENTE_DE_CONFIRMATION', 'Voiture En ATTENTE DE CONFIRMATION'),
+        ('voiture_RESERVEE_par_le_CLIENT', 'Voiture RESERVEE par le CLIENT'), 
+    ]             
+-->
+
+
+
+
+
+<!--             
+    <p id="AJAX_NOMBRE_DE_vehicles_A_CHOISIR">AJAX_NOMBRE_DE_vehicles_A_CHOISIR</p>         
+              
+    <p id="AJAX_AFFICHAGE_des_VOITURES_A_CHOISIR" > AJAX_AFFICHAGE_des_VOITURES_A_CHOISIR</p>      
+-->    
+    
+{% comment %} 
+    <div id="AJAX_NOMBRE_DE_vehicles_A_CHOISIR">AJAX_NOMBRE_DE_vehicles_A_CHOISIR</div>         
+              
+    <div id="AJAX_AFFICHAGE_des_VOITURES_A_CHOISIR" > AJAX_AFFICHAGE_des_VOITURES_A_CHOISIR</div>           
+{% endcomment %}
+
+<!-- Vehicle Cards -->
+<div class="row" style="margin-right:0; " >
+  {% for vehicle in vehicles %}
+    {% comment %} <div class="col-md-4 mb-4"> {% endcomment %}
+    <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-2">   -->
+
+<!-- 
+xs  : Styles par défaut ( Pour les TRES PETITES ECRANS )                    
+sm  : Style pour les écrans de taille extra petite (moins de 576px)         AROBASEmedia (max-width: 575px) {
+md  : Style pour les écrans petits (de 576px à 767px)                       AROBASEmedia (min-width: 576px) and (max-width: 767px) {
+lg  : Style pour les écrans moyens (de 768px à 991px)                       AROBASEmedia (min-width: 768px) and (max-width: 991px) {
+xl  : Style pour les écrans larges (de 992px à 1199px)                      AROBASEmedia (min-width: 992px) and (max-width: 1199px) {
+xxl : Style pour les écrans extra larges (1200px et plus)                   AROBASEmedia (min-width: 1200px) { 
+-->
+
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4" style="margin-bottom:14.95px; " >        
+      <div class="card h-100">         
+        {% comment %} <img src="{{ vehicle.images.url }}" class="card-img-top         img-fluid w-50" alt="{{ vehicle.name }}"> {% endcomment %}
+        {% comment %} <img src="{{ vehicle.images.url }}" class="card-img-top         img-fluid" alt="{{ vehicle.name }}"   style="width:100%; margin-right:0px;     height:auto; " > {% endcomment %}
+
+        {% comment %} 
+        <img src="../{{ vehicle.images.url }}" class="card-img-top         img-fluid" alt="{{ vehicle.name }}"   style="width:100%; margin-right:0px;     height:auto; " >        
+        {% endcomment %}
+
+        
+<!-- 
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+DEBUT ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" ::::::::::::::::::::::
+      
+        <img src="../{{ vehicle.images.url }}" class="card-img-top         img-fluid" alt="{{ vehicle.name }}"   style="width:100%; margin-right:0px;     height:259.45px; " > 
+-->        
+        {% comment %} <div border="1px solid black;" style="height:259.45px; width:259.45px;      margin-right:auto; margin-left:auto; "><img src="..//media/static/images/image_face_2.jpg" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>   {% endcomment %}
+        <div border="1px solid black;" style="height:259.45px; width:259.45px;      margin-right:auto; margin-left:auto; "><img src="../{{ vehicle.images.url }}" class="card-img-top         img-fluid" alt="name camion" style="width:100%; margin-right:0px;     height:auto; "></div>         
+<!-- 
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+FIN   ====================> Rendre 	"""""""""RESPONSIVE"""""""""    l'   """""""""IMAGE""""""""" !!!!!!!!!!!!!!!!!!!!!!
+--> 	
+
+        <div class="card-body">
+                <span style="font-size: large; " >
+        <!--
+        VILLE DE DEPART ===========            vehicle.departure_city_car_daily ===========             Antananarivo
+        VILLE D'ARRIVEE ===========            vehicle.arrival_city_car_daily  ===========            Diégo Suarez
+        -->          
+                    <a id="RESERVER_CAR{{ vehicle.id }}"    style="border: 0px solid black; display: block;   background-color: burlywood; " >Trajet quotidien : {{ vehicle.departure_city_car_daily }} - {{ vehicle.arrival_city_car_daily }}</a>
+                </span> 
+                    <!--  <br>  Balise de RETOUR A LA LIGNE -->                  
+
+                {% if request.session.client %}                              
+          <div class="card-text" style="margin-top: 5.24px;      display:none; " >
+                <a class='dropdown-item' href="{% url 'name_one_car_detail' vehicle.id %}">Voir le Calendrier de la R&eacute;servation !</a>                             
+          </div>
+                {% endif %}
+
+                    <!--  <br>  Balise de RETOUR A LA LIGNE -->        
+          <!-- <h5 class="card-title">{{ vehicle.name }}</h5> -->
+          <!-- Marque : <span style="font-size: large; font-weight: bold; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; " >{{ vehicle.name }}</span>       -->
+          <p class="card-text">Marque : <span style="font-size: x-large; font-weight: bold; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; " >{{ vehicle.name }}</span></p>                     
+          <p class="card-text">Num&eacute;ro d&apos;immatriculation : {{ vehicle.numero_immatriculation }}</p>          
+          <p class="card-text">Capacité : {{ vehicle.capacity }}</p>
+          {% comment %} <p class="card-text">Disponibilité de la Voiture : {{ CHAMP_disponibilite_vehicle_VALEUR_en_ATTENTE_DE_CONFIRMATION_ou_voiture_RESERVEE_par_le_CLIENT(transport_order.disponibilite_vehicle) }}</p> {% endcomment %}
+          {% comment %} <p class="card-text">Disponibilité de la Voiture : {{ transport_order.disponibilite_vehicle }}</p>           {% endcomment %}
+
+          
+{% if not vehicle.vehicle_pleine_oui_non %}
+      <p class="card-text">Disponibilit&eacute; de la Voiture : Voiture Libre ! </p>       
+{% else %}      
+      <p class="card-text">Disponibilit&eacute; de la Voiture : Voiture Pleine de Marchandises ! 🤩🤩</p>             
+{% endif %}
+
+   
+      {% comment %} <p class="card-text">{{ vehicle.description_car }}</p> {% endcomment %}
+
+          {% comment %} <a href="{% url 'place_order' transport_order.vehicle.id %}" class="btn btn-info">Annuler la réservation du véhicule</a> {% endcomment %}
+          {% comment %} <a href="{% url 'place_order' transport_order.id %}" class="btn btn-info">Annuler la réservation du véhicule</a>           {% endcomment %}          
+
+          
+{% if not vehicle.vehicle_pleine_oui_non %}
+          <a href="{% url 'place_order' vehicle.id %}" class="btn btn-primary">Choisir ce véhicule</a>
+              <br><br>    <!-- Balise de SAUT DE LIGNE -->
+      
+{% else %}
+          <p>D&eacute;solé ! Cette Voiture est <span style="font-weight: bold; text-decoration: overline; color:green; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; " >d&eacute;j&agrave; pleine</span> ! 😉<br>Veuillez choisir une Autre Voiture, svp ! 😉<br>Toutes nos excuses !</p>
+{% comment %} 
+<div style="display:none; ">          
+          <a href="{% url 'place_order' vehicle.id %}" class="btn btn-primary">Choisir ce véhicule</a>
+              <br><br>    <!-- Balise de SAUT DE LIGNE -->
+          <a href="{% url 'name_one_car_detail' vehicle.id %}" class="btn btn-primary">En savoir plus ...</a>                 
+</div> 
+{% endcomment %}
+{% endif %}
+
+          {% comment %} <a href="{% url 'name_one_car_detail' vehicle.id %}" class="btn btn-primary   RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         ">En savoir plus ...</a>  {% endcomment %}
+          {% comment %} <a href="{% url 'name_one_car_detail' vehicle.id %}" class="btn btn-primary">En savoir plus ...</a>            {% endcomment %}
+
+          {% comment %} 
+          <a href="{% url 'name_one_car_detail' vehicle.id %}" class="btn btn-primary">En savoir plus ...</a>                  
+          {% endcomment %}
+          
+          {% comment %} <a  class="">En savoir plus ...</a>                            {% endcomment %}
+
+
+{% comment %} Debut : LIEN EXEMPLE pour CREER UNE INFOBULLE  {% endcomment %}
+{% comment %} Debut : LIEN EXEMPLE pour CREER UNE INFOBULLE  {% endcomment %}
+{% comment %} Debut : LIEN EXEMPLE pour CREER UNE INFOBULLE  {% endcomment %}
+{% comment %} Debut : LIEN EXEMPLE pour CREER UNE INFOBULLE  {% endcomment %}
+{% comment %}
+<a href=""        numero_TABLE_Appreciation="{{  vehicle.id  }}"        id='LIEN_IDENTIFICATION_________F_50{{  vehicle.id  }}'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="Infobulle num&eacute;ro {{  vehicle.id  }}"          title='Modifier n° 2'         class='RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         '      >LIEN INFOBULLE {{  vehicle.id  }}</a>
+{% endcomment %}
+<a href="{% url 'name_one_car_detail' vehicle.id %}"        numero_TABLE_Appreciation="{{  vehicle.id  }}"        id='LIEN_IDENTIFICATION_________F_50{{  vehicle.id  }}'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="Calendrier de Réservation de cette Voiture immatricul&eacute;e {{  vehicle.numero_immatriculation  }}"          title='Plus de détails ici !'         class='btn btn-primary                                    RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         '      >En savoir plus ....</a>
+{% comment %} <a href="{% url 'name_one_car_detail' vehicle.id %}"        numero_TABLE_Appreciation="{{  vehicle.id  }}"        id='LIEN_IDENTIFICATION_________F_50{{  vehicle.id  }}'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="Calendrier de Réservation de cette Voiture immatricul&eacute;e {{  vehicle.numero_immatriculation  }}"          title='Plus de détails ici !'         class='btn btn-primary                                    RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         '      >LIEN INFOBULLE {{  vehicle.id  }}</a> {% endcomment %}
+{% comment %} <a href=""        numero_TABLE_Appreciation="9999993"        id='LIEN_IDENTIFICATION_________F_509999993'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="Un Infobulle &Agrave; créer 2"          title='Modifier n° 2'         class='RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         '      >LIEN INFOBULLE 2</a> {% endcomment %}
+{% comment %} Fin   : LIEN EXEMPLE pour CREER UNE INFOBULLE           {% endcomment %}
+{% comment %} Fin   : LIEN EXEMPLE pour CREER UNE INFOBULLE           {% endcomment %}
+{% comment %} Fin   : LIEN EXEMPLE pour CREER UNE INFOBULLE           {% endcomment %}
+{% comment %} Fin   : LIEN EXEMPLE pour CREER UNE INFOBULLE           {% endcomment %}
+
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+
+{% endblock "contenu" %}

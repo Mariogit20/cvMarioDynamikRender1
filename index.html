@@ -1,0 +1,437 @@
+{% extends "layouts/master.html" %}
+{% block titre %}
+index
+{% endblock titre %}
+{% block contenue %}
+
+        <!-- Carousel Start -->
+        <div class="container-fluid p-0">
+            <div class="owl-carousel header-carousel position-relative">
+
+                {% for x in slide %}
+                <div class="owl-carousel-item position-relative">
+                    <!-- <img class="img-fluid" src="img/carousel-1.jpg" alt=""> -->
+                    <img class="img-fluid" src="media/{{x.image}}" alt="">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(43, 57, 64, .5);">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-10 col-lg-8">
+                                    <!-- <h1 class="display-3 text-white animated slideInDown mb-4">Find The Perfect Job That You Deserved</h1> -->
+                                    <h1 class="display-3 text-white animated slideInDown mb-4">{{x.Titre1}}</h1>                                    
+                                    <!-- <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p> -->
+                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">{{x.Attraction}}</p>                                    
+                                    <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Search A Job</a>
+                                    <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Find A Talent</a> -->
+                                    {% if request.session.user %}
+                                        <a href="{% url 'homepage' %}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft             truncate_NOM_DE_L_UTILISATEUR    " >{{request.session.user.nom}}</a>
+                                        <a href="{% url 'deconexion' %}" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">deconexion</a>      
+                                    {% else %}
+                                        <a href="{% url 'loginpage' %}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Conexion</a>
+                                        <a href="{% url 'signuppage' %}" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">inscription</a>                                                                    
+                                    {% endif %}
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+        <!-- Carousel End -->
+
+
+
+
+<!--
+DEBUT ===========> """"AFFICHAGE"""" seulement de """"QUELQUES INFORMATIONS"""" concernant l'""""UTILISATEUR"""" ::::::::::        
+--> 
+<!--
+Le LIEN      inscription     SE TROUVE DANS LES    FICHIERS    JOBENTRY/template/signup.html    ET    JOBENTRY/AppUser/urls.py             
+-->
+{% if request.session.user %}
+<br>
+<span>Bonjour {{request.session.user.nom}}</span>
+{% endif %}
+<br>
+
+
+
+
+
+{% if request.session.user %}	 
+<div class="row" style="margin: 0 !important; padding: 0 !important;">
+									  
+    <div class="col-12 col-sm-6 col-md-1 col-lg-1 col-xl-1 col-xxl-1 bordure            d-none d-md-block" style="margin: 0 !important; padding: 0 !important;         height: auto;     ">
+<a href="{% url 'homepage' %}" class="btn btn-primary  animated slideInLeft         truncate    ">{{request.session.user.nom}}</a>
+    </div>
+									  
+    <div class="col-12 col-sm-6 col-md-1 col-lg-1 col-xl-1 col-xxl-1 bordure" style="margin: 0 !important; padding: 0 !important;         height: auto;     ">
+<a href="{% url 'deconexion' %}" class="btn btn-secondary animated slideInRight">deconexion</a>      
+    </div>
+
+</div>    
+{% else %}					 
+<div class="row" style="margin: 0 !important;">
+									  
+    <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2 bordure" style="margin: 0 !important; padding: 0 !important;         height: auto;     ">
+<a href="{% url 'loginpage' %}" class="btn btn-primary  animated slideInLeft">Conexion</a>
+    </div>
+									  
+    <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2 bordure" style="margin: 0 !important; padding: 0 !important;         height: auto;     ">
+<a href="{% url 'signuppage' %}" class="btn btn-secondary  animated slideInRight">inscription</a> 
+    </div>
+
+</div>    
+{% endif %}
+
+
+
+
+{% if request.session.user %}
+<br> 
+
+
+
+
+<h3>Utilisateur :</h3>
+<span class="truncate_NOM_DE_L_UTILISATEUR">Nom : {{request.session.user.nom}}</span>
+<br>
+<span>&Eacute;mail : {{request.session.user.email}}</span>
+<br>
+Photo : <img  class="img-fluid"  src="/media/{{request.session.user.photo}}" alt="" style="width: 40px; height: 40px; border-radius:50%; " >
+<br><br>  
+{% endif %}
+<!--
+FIN   ===========> """"AFFICHAGE"""" seulement de """"QUELQUES INFORMATIONS"""" concernant l'""""UTILISATEUR"""" !!!!!!!!!!
+-->
+
+
+
+
+
+
+<!--
+DEBUT ========> AJAX JQUERY EasyUI ========> NOMBRE D'APPRECIATIONS par UTILISATEUR ::::::::::
+DEBUT ========> AJAX JQUERY EasyUI ========> NOMBRE D'APPRECIATIONS par UTILISATEUR ::::::::::
+DEBUT ========> AJAX JQUERY EasyUI ========> NOMBRE D'APPRECIATIONS par UTILISATEUR ::::::::::
+DEBUT ========> AJAX JQUERY EasyUI ========> NOMBRE D'APPRECIATIONS par UTILISATEUR ::::::::::
+DEBUT ========> AJAX JQUERY EasyUI ========> NOMBRE D'APPRECIATIONS par UTILISATEUR ::::::::::
+--> 
+<div class="row" style="margin: 0 !important;">
+    {% if request.session.user %}
+    <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 bordure" style="margin: 0 !important;         height: auto; " >
+        <h5>Colonne 1.1<br><div id="AJAX_JQUERY_response_Nbre_APPRECIATIONS_par_UTILISATEUR"    style="overflow: scroll; " >AJAX_JQUERY_response_Nbre_APPRECIATIONS_par_UTILISATEUR</div></h5>
+    </div>
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 bordure" style="margin: 0 !important;         height: auto; " >
+    {% else %}
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bordure" style="margin: 0 !important;         height: auto; " >
+    {% endif %}
+        <h2>Colonne 1.3</h2>							 
+    </div>
+</div>    
+<!--
+FIN   ========> AJAX JQUERY EasyUI ========> NOMBRE D'APPRECIATIONS par UTILISATEUR !!!!!!!!!!
+FIN   ========> AJAX JQUERY EasyUI ========> NOMBRE D'APPRECIATIONS par UTILISATEUR !!!!!!!!!!
+FIN   ========> AJAX JQUERY EasyUI ========> NOMBRE D'APPRECIATIONS par UTILISATEUR !!!!!!!!!!
+FIN   ========> AJAX JQUERY EasyUI ========> NOMBRE D'APPRECIATIONS par UTILISATEUR !!!!!!!!!!
+FIN   ========> AJAX JQUERY EasyUI ========> NOMBRE D'APPRECIATIONS par UTILISATEUR !!!!!!!!!!
+--> 
+
+
+
+
+
+
+<div class="row" style="margin: 0 !important;">
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 bordure" style="margin: 0 !important;">
+        <h2>Colonne 2.1</h2>
+    </div>
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 bordure" style="margin: 0 !important;">
+        <h2>Colonne 2.2</h2>							 
+    </div>
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 bordure" style="margin: 0 !important;">
+        <h2>Colonne 2.3</h2>							 
+    </div> 
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
+        <div class="row" style="margin: 0 !important;">
+
+<!--  
+DEBUT ===================> """"""""PANNEAUX_GRILLES"""""""" du Framework """"""""BOOTSTRAP3"""""""" ::::::::::::::::::::    
+DEBUT ===================> """"""""PANNEAUX_GRILLES"""""""" du Framework """"""""BOOTSTRAP3"""""""" ::::::::::::::::::::    
+DEBUT ===================> """"""""PANNEAUX_GRILLES"""""""" du Framework """"""""BOOTSTRAP3"""""""" ::::::::::::::::::::    
+DEBUT ===================> """"""""PANNEAUX_GRILLES"""""""" du Framework """"""""BOOTSTRAP3"""""""" ::::::::::::::::::::    
+-->
+<div class="col-sm-8" style="margin: 0 !important;">
+    <div class="panel panel-default">
+    <div class="panel-heading">
+    <h1>Premier panneau</h1>
+    </div>
+    <div class="panel-body">
+    <p>Corps du panneau :</p>
+       <p>Denique Antiochensis ordinis vertices sub uno elogio sub uno elogio iussit occidi ideo efferatus, quod el celebrari vilitatem intempestivam urgenti</p>
+    </div>
+    </div>
+    </div>
+    
+    <div class="col-sm-4" style="margin: 0 !important;">
+    <div class="panel panel-default">
+    <div class="panel-heading">
+    <h1>Second panneau</h1>
+    </div>
+    <div class="panel-body">
+    <p>Corps du panneau :</p>
+       <p>Denique Antiochensis ordinis vertices sub uno elogio sub uno elogio iussit occidi ideo efferatus, quod el celebrari vilitatem intempestivam urgenti</p> 
+    </div>
+    </div>
+    </div>
+<!--  
+FIN   ===================> """"""""PANNEAUX_GRILLES"""""""" du Framework """"""""BOOTSTRAP3"""""""" !!!!!!!!!!!!!!!!!!!!    
+FIN   ===================> """"""""PANNEAUX_GRILLES"""""""" du Framework """"""""BOOTSTRAP3"""""""" !!!!!!!!!!!!!!!!!!!!    
+FIN   ===================> """"""""PANNEAUX_GRILLES"""""""" du Framework """"""""BOOTSTRAP3"""""""" !!!!!!!!!!!!!!!!!!!!    
+FIN   ===================> """"""""PANNEAUX_GRILLES"""""""" du Framework """"""""BOOTSTRAP3"""""""" !!!!!!!!!!!!!!!!!!!!    
+-->    
+
+        </div>	  <!-- <div class="row" style="margin: 0 !important;"> -->					 
+    </div>     <!--  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">  -->   
+    <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
+
+
+
+
+
+{% if request.session.user %}
+<!-- <br><br>      Balise de    SAUT DE LIGNE -->
+
+
+
+
+<!-- <textarea name="Balise_TEXTAREA_TEMOIGNAGE" id="Balise_TEXTAREA_TEMOIGNAGE"    style="width: 20%;  height: 195.4px;    "  ></textarea>
+
+<a href="">Ajouter le commentaire</a>
+
+<a href="">Modifier le commentaire</a> -->
+
+
+
+<h3>Appr&eacute;ciations :</h3>
+
+<!--
+Le LIEN      inscription     SE TROUVE DANS LES    FICHIERS    JOBENTRY/template/signup.html    ET    JOBENTRY/AppUser/urls.py             
+-->
+<form method="post" enctype="multipart/form-data" action="{% url 'ENREGISTRER_le_COMMENTAIRE_de_USER' %}"  >
+    {% csrf_token %}
+    <div class="mb-3">
+        <!-- <label for="Balise_TEXTAREA_TEMOIGNAGE" class="form-label">T&Eacute;MOIGNAGE</label> -->
+        <!-- <textarea name="Balise_TEXTAREA_TEMOIGNAGE" id="Balise_TEXTAREA_TEMOIGNAGE"    style="width: 20%;  height: 195.4px;    "  ></textarea> -->
+        <div    style="width: 90.7%; margin-left: auto; margin-right: auto;    ">
+
+            <textarea name="Balise_TEXTAREA_TEMOIGNAGE" id="Balise_TEXTAREA_TEMOIGNAGE"    style="width: 100%; margin-left: auto; margin-right: auto;                   height: 195.4px;    "  ></textarea>        
+        </div>
+    </div>  
+    <input type="submit" value="Enregistrer votre Appr&eacute;ciation"        numero_TABLE_Appreciation="9999994"        id='LIEN_IDENTIFICATION_________F_509999994'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="Enregistrer votre Appr&eacute;ciation !"          title='Modifier n° 2'         class='RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         '      >
+</form>     
+
+
+
+
+
+<br>      <!--  BALISE de  """"RETOUR A LA LIGNE""""  -->
+
+{% else %}
+
+<br><br>      <!--  BALISE de  """"SAUT DE LIGNE""""  -->
+
+{% endif %}
+ 
+
+
+
+
+
+
+
+
+
+<!--
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+DEBUT ========================================================> INFOBULLE ::::::::::::::::::::::::::::::::
+-->
+<!--
+DEBUT de l BALISE LIEN HTML :      <a href=         ::::::::::::::::::::::::::::::::::::::
+-->  
+<a href=""        numero_TABLE_Appreciation="9999992"        id='LIEN_IDENTIFICATION_________F_509999992'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="Un Infobulle à créer 1"          title='Modifier n° 1'         class='RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         '      >LIEN INFOBULLE</a>
+<!--
+FIN   de l BALISE LIEN HTML :      <a href=         ::::::::::::::::::::::::::::::::::::::  
+-->  
+
+<br><br>   <!--  SAUT DE LIGNE  -->
+
+<!--
+DEBUT de l BALISE LIEN HTML :      <a href=         ::::::::::::::::::::::::::::::::::::::
+-->  
+<a href=""        numero_TABLE_Appreciation="9999993"        id='LIEN_IDENTIFICATION_________F_509999993'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="Un Infobulle &Agrave; créer 2"          title='Modifier n° 2'         class='RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         '      >LIEN INFOBULLE 2</a>
+<!--
+FIN   de l BALISE LIEN HTML :      <a href=         ::::::::::::::::::::::::::::::::::::::  
+-->  
+<!--
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ========================================================> INFOBULLE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-->
+
+
+
+
+
+
+
+
+<!--
+DEBUT ==========================> AFFICHER les """"APPRECIATIONS des UTILISATEURS"""" à l'aide d'AJAX :::::::::::::::::::::
+DEBUT ==========================> AFFICHER les """"APPRECIATIONS des UTILISATEURS"""" à l'aide d'AJAX :::::::::::::::::::::
+DEBUT ==========================> AFFICHER les """"APPRECIATIONS des UTILISATEURS"""" à l'aide d'AJAX :::::::::::::::::::::
+DEBUT ==========================> AFFICHER les """"APPRECIATIONS des UTILISATEURS"""" à l'aide d'AJAX :::::::::::::::::::::
+-->
+{% if request.session.user %}
+<br>   <!-- BALISE   de   RETOUR A LA LIGNE --> 
+<br>   <!-- BALISE   de   RETOUR A LA LIGNE --> 
+<!-- <label><input type="radio" name="option" value="option1"> Option 1</label><br>
+<label><input type="radio" name="option" value="option2"> Option 2</label><br>
+<label><input type="radio" name="option" value="option3"> Option 3</label><br> -->
+
+<!--
+Début ==========> AJAX retournant si """"Appréciations de l'Utilisateur en cours"""" ou bien si """"Appréciations de Tous les Utilisateurs"""" après avoir cliqué sur l'""""UN des deux BOUTONS RADIO"""" :::::::::::::::::::::::::::::
+Début ==========> AJAX retournant si """"Appréciations de l'Utilisateur en cours"""" ou bien si """"Appréciations de Tous les Utilisateurs"""" après avoir cliqué sur l'""""UN des deux BOUTONS RADIO"""" :::::::::::::::::::::::::::::
+Début ==========> AJAX retournant si """"Appréciations de l'Utilisateur en cours"""" ou bien si """"Appréciations de Tous les Utilisateurs"""" après avoir cliqué sur l'""""UN des deux BOUTONS RADIO"""" :::::::::::::::::::::::::::::
+Début ==========> AJAX retournant si """"Appréciations de l'Utilisateur en cours"""" ou bien si """"Appréciations de Tous les Utilisateurs"""" après avoir cliqué sur l'""""UN des deux BOUTONS RADIO"""" :::::::::::::::::::::::::::::
+--> 
+
+<form method="post">
+    {% csrf_token %}
+<label><input type="radio" name="option_Bouton_Radio_APPRECIATIONS_de_UTILISATEUR" value="APPRECIATIONS_de_UTILISATEUR_EN_COURS"   > Appr&eacute;ciations de l'<i><sup><span style="font-size: large; text-decoration: underline;  " >Utilisateur</span></sup></i> </label><br>
+<label><input type="radio" name="option_Bouton_Radio_APPRECIATIONS_de_UTILISATEUR" value="APPRECIATIONS_de_TOUS_LES_UTILISATEURS"         id="radio2_APPRECIATIONS_de_TOUS_LES_UTILISATEURS" > Appr&eacute;ciations de Tout le monde </label><br>
+</form>
+
+<!--
+DEBUT ====> """""""""AJAX""""""""" avec le Framework JAVASCRIPT nommé """""""""JQUERY EasyUI""""""""" ::::::::::::::::::::::::::
+DEBUT ====> """""""""AJAX""""""""" avec le Framework JAVASCRIPT nommé """""""""JQUERY EasyUI""""""""" ::::::::::::::::::::::::::
+-->
+<div id="response"></div>
+<!--
+FIN   ====> """""""""AJAX""""""""" avec le Framework JAVASCRIPT nommé """""""""JQUERY EasyUI""""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====> """""""""AJAX""""""""" avec le Framework JAVASCRIPT nommé """""""""JQUERY EasyUI""""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!
+-->
+
+<!--
+Fin   ==========> AJAX retournant si """"Appréciations de l'Utilisateur en cours"""" ou bien si """"Appréciations de Tous les Utilisateurs"""" après avoir cliqué sur l'""""UN des deux BOUTONS RADIO"""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Fin   ==========> AJAX retournant si """"Appréciations de l'Utilisateur en cours"""" ou bien si """"Appréciations de Tous les Utilisateurs"""" après avoir cliqué sur l'""""UN des deux BOUTONS RADIO"""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Fin   ==========> AJAX retournant si """"Appréciations de l'Utilisateur en cours"""" ou bien si """"Appréciations de Tous les Utilisateurs"""" après avoir cliqué sur l'""""UN des deux BOUTONS RADIO"""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Fin   ==========> AJAX retournant si """"Appréciations de l'Utilisateur en cours"""" ou bien si """"Appréciations de Tous les Utilisateurs"""" après avoir cliqué sur l'""""UN des deux BOUTONS RADIO"""" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+--> 
+
+  <!-- <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  <label for="vehicle1"> I have a bike</label><br>
+  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+  <label for="vehicle2"> I have a car</label><br>
+  <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+  <label for="vehicle3"> I have a boat</label><br> -->
+
+{% endif %}
+<!--
+FIN   ==========================> AFFICHER les """"APPRECIATIONS des UTILISATEURS"""" à l'aide d'AJAX !!!!!!!!!!!!!!!!!!!!!
+FIN   ==========================> AFFICHER les """"APPRECIATIONS des UTILISATEURS"""" à l'aide d'AJAX !!!!!!!!!!!!!!!!!!!!!
+FIN   ==========================> AFFICHER les """"APPRECIATIONS des UTILISATEURS"""" à l'aide d'AJAX !!!!!!!!!!!!!!!!!!!!!
+FIN   ==========================> AFFICHER les """"APPRECIATIONS des UTILISATEURS"""" à l'aide d'AJAX !!!!!!!!!!!!!!!!!!!!!
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+DEBUT ====================================> FORMULAIRE de    MODIFICATION    ::::::::::::::::
+-->
+<!-- <form   class="ZONE_DE_TEXTE_de_MODIFICATION_de_la_TABLE_Testimonials"   id="Formulaire_de_MODIFICATION_DE_L_ENREGISTREMENT_{{y.id}}"      method="post" enctype="multipart/form-data"               style="display: none;   " >
+    {% csrf_token %}
+    <div class="mb-3">
+        <textarea    name="Balise_TEXTAREA_TEMOIGNAGE_Modifier_{{y.id}}" id="Balise_TEXTAREA_TEMOIGNAGE_Modifier_{{y.id}}"    style="width: 20%;  height: 195.4px;    "  >{{y.Text}}</textarea>
+    </div>
+    <input type="text" name="NUMERO_Balise_TEXTAREA_TEMOIGNAGE_Modifier" class="NUMERO_Balise_TEXTAREA_TEMOIGNAGE_Modifier"     placeholder="NUMERO du FORMULAIRE à utiliser par AJAX" >  
+    <input type="submit" value="Modifier votre Appr&eacute;ciation {{y.id}}"        numero_TABLE_Appreciation="{{y.id}}"        id='LIEN_IDENTIFICATION_________F_50{{y.id}}'          onmouseover='FONCTION________Creer_une_INFOBULLE_52(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_52(this)"                    alt="Modifier votre Appr&eacute;ciation"          title='Modifier n° 2'         class='RANG_____ENREGISTREMENT_DE_L_INFOBULLE_52              TEXTE_____DE_L_INFOBULLE_52              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_53              TEXTE_____DE_L_INFOBULLE_53         '      >
+</form>   -->
+<!--
+FIN   ====================================> FORMULAIRE de    MODIFICATION    !!!!!!!!!!!!!!!!
+-->
+
+
+
+
+
+    </div>  <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     "> -->
+    <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
+Les Cards et les Formulaires de Bootstrap3 ici !        
+<br>
+<!-- Liste des LIVRES par auteur ENCORE A FAIRE en AJAX JQUERY EasyUI !!!!!!!!!!!!!!
+<br> -->
+
+
+
+<!--
+DEBUT ====> """""""""AJAX""""""""" avec le Framework JAVASCRIPT nommé """""""""JQUERY EasyUI""""""""" ::::::::::::::::::::::::::
+DEBUT ====> """""""""AJAX""""""""" avec le Framework JAVASCRIPT nommé """""""""JQUERY EasyUI""""""""" ::::::::::::::::::::::::::
+
+response_AJAX_JQUERY_EasyUI_concernant_le___FORMULAIRE_DE_RECHERCHE___de_la_TABLE_Auteur
+-->
+<div id="response_AJAX_JQUERY_EasyUI_concernant_le___FORMULAIRE_DE_RECHERCHE___de_la_TABLE_Auteur"></div>
+<!--
+response_AJAX_JQUERY_EasyUI_concernant_le___FORMULAIRE_DE_RECHERCHE___de_la_TABLE_Auteur
+
+FIN   ====> """""""""AJAX""""""""" avec le Framework JAVASCRIPT nommé """""""""JQUERY EasyUI""""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====> """""""""AJAX""""""""" avec le Framework JAVASCRIPT nommé """""""""JQUERY EasyUI""""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!
+-->
+
+
+
+<!--
+DEBUT ====> """""""""AJAX""""""""" avec le Framework JAVASCRIPT nommé """""""""JQUERY EasyUI""""""""" ::::::::::::::::::::::::::
+DEBUT ====> """""""""AJAX""""""""" avec le Framework JAVASCRIPT nommé """""""""JQUERY EasyUI""""""""" ::::::::::::::::::::::::::
+
+response_AJAX_JQUERY_EasyUI_affiche_la_Liste_des_LIVRES_par_auteur
+-->
+<div id="response_AJAX_JQUERY_EasyUI_affiche_la_Liste_des_LIVRES_par_auteur"></div>
+<!--
+response_AJAX_JQUERY_EasyUI_affiche_la_Liste_des_LIVRES_par_auteur
+
+FIN   ====> """""""""AJAX""""""""" avec le Framework JAVASCRIPT nommé """""""""JQUERY EasyUI""""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!
+FIN   ====> """""""""AJAX""""""""" avec le Framework JAVASCRIPT nommé """""""""JQUERY EasyUI""""""""" !!!!!!!!!!!!!!!!!!!!!!!!!!
+-->
+
+    </div>        
+
+</div>    <!--  <div class="row">  -->
+
+{% endblock contenue %}
+
